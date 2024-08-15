@@ -140,7 +140,7 @@ int main() // Função principal que exibe o menu e processa a seleção do usuário
         printf("\t1 - Registrar nomes\n");
         printf("\t2 - Consultar nomes\n");
         printf("\t3 - Deletar nomes\n");
-        printf("\t4 - Sair\n\n"); // Adiciona a opção de sair
+        printf("\t4 - Sair do sistema\n\n"); // Adiciona a opção de sair
         printf("Opção: "); // Prompt para o usuário escolher uma opção
         
         // Lê a escolha do usuário
