@@ -125,56 +125,72 @@ int delete() // Função para deletar usuários
 
 int main() // Função principal que exibe o menu e processa a seleção do usuário
 {
+	setlocale(LC_ALL, "Portuguese"); // Define a linguagem para exibir acentuação corretamente
     int opcao = 0; // Declaração da variável que armazenará a opção escolhida pelo usuário
     int laco = 1; // Variável para controlar o loop do menu
+    char senhadigitada[10]="a";
+    int comparacao;
     
-    while(laco == 1) // Loop principal que exibe o menu repetidamente
+    printf("### Cartório Silva ###\n\n");
+    printf("Login de adminisrador!\n\nDigite a sua senha:  ");
+    scanf("%s", senhadigitada);
+    
+    comparacao = strcmp(senhadigitada, "admin");
+    
+    if(comparacao == 0)
     {
-        system("cls"); // Limpa a tela do console
-        
-        setlocale(LC_ALL, "Portuguese"); // Define a linguagem para exibir acentuação corretamente
-        
-        // Exibe o menu de opções
-        printf("### Cartório Silva ###\n\n"); // Título do menu
-        printf("Escolha uma das opções no menu: \n\n");
-        printf("\t1 - Registrar nomes\n");
-        printf("\t2 - Consultar nomes\n");
-        printf("\t3 - Deletar nomes\n");
-        printf("\t4 - Sair do sistema\n\n"); // Adiciona a opção de sair
-        printf("Opção: "); // Prompt para o usuário escolher uma opção
-        
-        // Lê a escolha do usuário
-        scanf("%d", &opcao);
-        
-        system("cls"); // Limpa a tela do console
-        
-        // Processa a escolha do usuário
-        switch(opcao)
-        {
-            case 1: // Se a opção for 1, chama a função de registro
-                registro();
-                break;
-            
-            case 2: // Se a opção for 2, chama a função de consulta
-                consulta();
-                break;
-            
-            case 3: // Se a opção for 3, chama a função de deletar
-                delete();
-                break;
-            
-            case 4: // Se a opção for 4, sai do loop e encerra o programa
-                laco = 0;
-                printf("Saindo do programa...\n");
-                break;
-            
-            default: // Se a escolha não for válida, exibe uma mensagem de erro
-                printf("ERRO: Esta opção não está disponível.\n");
-                system("pause"); // Pausa o sistema para que o usuário possa ver a mensagem
-                break;
-        }
-    }
-    
+    	system("cls");
+	    while(laco == 1) // Loop principal que exibe o menu repetidamente
+	    {
+	        system("cls"); // Limpa a tela do console
+	        
+	        setlocale(LC_ALL, "Portuguese"); // Define a linguagem para exibir acentuação corretamente
+	        
+	        // Exibe o menu de opções
+	        printf("### Cartório Silva ###\n\n"); // Título do menu
+	        printf("Escolha uma das opções no menu: \n\n");
+	        printf("\t1 - Registrar nomes\n");
+	        printf("\t2 - Consultar nomes\n");
+	        printf("\t3 - Deletar nomes\n");
+	        printf("\t4 - Sair do sistema\n\n"); // Adiciona a opção de sair
+	        printf("Opção: "); // Prompt para o usuário escolher uma opção
+	        
+	        // Lê a escolha do usuário
+	        scanf("%d", &opcao);
+	        
+	        system("cls"); // Limpa a tela do console
+	        
+	        // Processa a escolha do usuário
+	        switch(opcao)
+	        {
+	            case 1: // Se a opção for 1, chama a função de registro
+	                registro();
+	                break;
+	            
+	            case 2: // Se a opção for 2, chama a função de consulta
+	                consulta();
+	                break;
+	            
+	            case 3: // Se a opção for 3, chama a função de deletar
+	                delete();
+	                break;
+	            
+	            case 4: // Se a opção for 4, sai do loop e encerra o programa
+	                laco = 0;
+	                printf("Saindo do programa...\n");
+	                break;
+	            
+	            default: // Se a escolha não for válida, exibe uma mensagem de erro
+	                printf("ERRO: Esta opção não está disponível.\n");
+	                system("pause"); // Pausa o sistema para que o usuário possa ver a mensagem
+	                break;
+	        }
+	    }
+	}
+       else
+       printf("Erro: senha incorreta.");
+
+
     return 0; // Retorna 0 para indicar que o programa terminou com sucesso
 }
 
